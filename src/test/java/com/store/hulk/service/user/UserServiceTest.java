@@ -20,11 +20,11 @@ class UserServiceTest {
 
         UserHulk user_admin=new UserHulk(
                 999,
-                "amosquera",
-                "Aldair",
-                "Mosquera",
-                "Murillo",
-                "123");
+                "dgonzalez211",
+                "Diego",
+                "Gonzalez",
+                "Marrugo",
+                "kali");
         user_admin=service.save(user_admin);
         assertThat(user_admin.getId()).isGreaterThan(0);
 
@@ -32,7 +32,7 @@ class UserServiceTest {
 
     @Test
     void findByUserName() {
-        UserHulk hulk = service.findByUserName("amosquera");
+        UserHulk hulk = service.findByUserName("dgonzalez211");
         assertThat(hulk).isNotNull();
     }
 
