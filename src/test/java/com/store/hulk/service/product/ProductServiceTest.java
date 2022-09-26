@@ -22,16 +22,16 @@ class ProductServiceTest {
 
     @Test
     void saveCategory() {
-        Category category2 = service.saveCategory( new Category(0,"Comics","Comics de todoas las epocas"));
+        Category category2 = service.saveCategory( new Category(0,"Comics","Comics of your favorites superheroes"));
         category2 = service.saveCategory(category2);
         assertThat(category2.getId()).isGreaterThan(0);
     }
 
     @Test
     void save() {
-        Category category2 = service.saveCategory( new Category(0,"Comics","Comics de todoas las epocas"));
+        Category category2 = service.saveCategory( new Category(0,"Comics","Comics of your favorites superheroes"));
         Product product = new Product(0,"Amazing Spider-Man Omnibus, Vol. 1",
-                "En 1962, Stan Lee y Steve Ditko dieron a luz a uno de los íconos más perdurables de los medios populares estadounidenses."
+                "In 1962, Stan Lee and Steve Ditko gave birth to one of the most enduring icons of American popular media."
                 ,(long)3,new BigDecimal(2_350_000) , Stream.of(category2).collect(Collectors.toList()));
         product = service.save(product);
         assertThat(product.getId()).isGreaterThan(0);
